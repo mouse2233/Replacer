@@ -1,0 +1,5 @@
+﻿Пример для установки имени пк. Параметры можно кидать в разном порядке.
+Первый параметр в примере - путь до файла, второй  привязка к маркеру в расширении, третий значение на замену.
+AssemblyPath="C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs" PropirityValue="{TargetText}" Value="$MachineName"
+Вторая строка для восстановления значений
+AssemblyPath="C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs" PropirityValue="$MachineName" Value="{TargetText}"

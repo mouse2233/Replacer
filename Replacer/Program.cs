@@ -1,44 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿//TODO:
+//  Заменить пути файла
+//  добавить вывод данных
+//  добавить считывание пути файла из командной сторки
+
+using System;
+using Replacer.Parametrs;
 
 namespace Replacer
 {
+    /// <summary>
+    /// Основное приложение для замены параметров в файле AssemblyInfo
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)
         {
-            string textValue = System.Environment.MachineName;
-            if (args.Length == 0)
-            {
-                string str = string.Empty;
-                using (System.IO.StreamReader reader = System.IO.File.OpenText(@"C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs"))
-                {
-                    str = reader.ReadToEnd();
-                }
-                str = str.Replace("{TargetText}", textValue);
+            ParametrController parametrController = new ParametrController();
+            parametrController.ParseParametrs(args);
 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs"))
-                {
-                    file.Write(str);
-                }
+            try
+            {
+                Command command = CommandCreator.CreateCommand(parametrController);
+                command.Execute();
             }
-            else
+            catch(Exception ex)//Можно прикрутить логгер, но эт уже явный перебор 
             {
-                string str = string.Empty;
-                using (System.IO.StreamReader reader = System.IO.File.OpenText(@"C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs"))
-                {
-                    str = reader.ReadToEnd();
-                }
-                str = str.Replace(textValue, "{TargetText}");
-
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs"))
-                {
-                    file.Write(str);
-                }
+                Console.WriteLine(ex.ToString());
+                throw ex;
             }
         }
     }

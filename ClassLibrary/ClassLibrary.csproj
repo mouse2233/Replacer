@@ -72,9 +72,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>start $(ProjectDir)\Replacer.exe</PreBuildEvent>
+    <PreBuildEvent>start $(ProjectDir)\Replacer.exe AssemblyPath="C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs" PropirityValue="{TargetText}" Value="$MachineName"
+</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>start "" $(ProjectDir)\Replacer.exe -par "-"</PostBuildEvent>
+    <PostBuildEvent>start $(ProjectDir)\Replacer.exe AssemblyPath="C:\Users\Andrey\source\repos\FrameworkForms\ClassLibrary\Properties\AssemblyInfo.cs" PropirityValue="$MachineName" Value="{TargetText}"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

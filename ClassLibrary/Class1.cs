@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//Данная библиотека нужна как пример, для того чтобы показать как настроить проект для работы с плагином
 namespace ClassLibrary
 {
     public class Class1

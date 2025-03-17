@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C95AEE87-4332-428B-8E20-6A58F37AE0B8}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Replacer</RootNamespace>
     <AssemblyName>Replacer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,11 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IO\AssemblyReader.cs" />
+    <Compile Include="Commands\Command\AssemblySetOnName.cs" />
+    <Compile Include="Commands\Command\AssemblySetOnValue.cs" />
+    <Compile Include="IO\AssemblyWriter.cs" />
+    <Compile Include="Commands\Abstract\Command.cs" />
+    <Compile Include="Parametrs\IParametrParcer.cs" />
+    <Compile Include="Parametrs\ParametrController.cs" />
+    <Compile Include="Parametrs\ParametrParcer.cs" />
+    <Compile Include="Parametrs\Parametr.cs" />
+    <Compile Include="Commands\CommandCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Commands\Abstract\SetCommand.cs" />
+    <Compile Include="Values\MachineNameValues.cs" />
+    <Compile Include="Values\IValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CMD_ArgsExample.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

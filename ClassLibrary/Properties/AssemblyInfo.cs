@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ClassLibrary")]
 [assembly: AssemblyDescription("asd")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Китайское общество ограниченной ответственности суйхуй")]
+[assembly: AssemblyCompany("Name")]
 [assembly: AssemblyProduct("ClassLibrary")]
 [assembly: AssemblyCopyright("{TargetText}")]
 [assembly: AssemblyTrademark("")]
